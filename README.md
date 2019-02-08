@@ -36,7 +36,10 @@ Our solution will levegerage the following Cisco technologies
 
 ## Solution Components
 
-TODO
+* Golang
+* Grafana
+* InfluxDB or Prometheus
+
 
 ## Usage
 
