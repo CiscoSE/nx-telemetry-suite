@@ -18,10 +18,6 @@ notifications to webex teams
 
 ### Cisco Products Technologies/ Services
 
-* Cisco Nexus
-* Crosswork Situation Manager
-* Webex teams
-
 Our solution will levegerage the following Cisco technologies
 
 * [Cisco Nexus](https://www.cisco.com/c/en/us/products/switches/data-center-switches/index.html)
