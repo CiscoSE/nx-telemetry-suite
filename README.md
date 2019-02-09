@@ -5,7 +5,7 @@ Configure and visualize Nexus telemetry in a single place
 
 ## Business/Technical Challenge
 
-Get the correct telemetry streams may be tricky, but even more is to get the correct stack of time series database, querying and visualization
+Getting the correct telemetry streams may be tricky, but even more is to get the correct stack of time series database, querying and visualization
 
 ## Proposed Solution
 
