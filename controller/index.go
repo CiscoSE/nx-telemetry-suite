@@ -23,5 +23,10 @@ func (i indexController) handleIndex(w http.ResponseWriter, r *http.Request) {
 }
 
 func (i indexController) redirectHome(w http.ResponseWriter, r *http.Request) {
-	http.Redirect(w, r, "/web/", http.StatusSeeOther)
+	switch r.Method {
+	case http.MethodGet:
+		http.Redirect(w, r, "/web/", http.StatusSeeOther)
+	case http.MethodPost:
+		telemetryCtl.handleTelemetry(w, r)
+	}
 }

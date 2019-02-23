@@ -16,5 +16,6 @@ func (h homeController) registerRoutes(r *mux.Router) {
 }
 
 func (h homeController) handleHome(w http.ResponseWriter, r *http.Request) {
+	
 	h.template.Execute(w, nil)
 }
