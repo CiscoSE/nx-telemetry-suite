@@ -27,6 +27,7 @@ func (i indexController) redirectHome(w http.ResponseWriter, r *http.Request) {
 	case http.MethodGet:
 		http.Redirect(w, r, "/web/", http.StatusSeeOther)
 	case http.MethodPost:
+		// Assumning all not found routes are telemetry related if method is post
 		telemetryCtl.handleTelemetry(w, r)
 	}
 }

@@ -75,7 +75,9 @@ func (t telemetryController) addJSONToInfluxDB(data []byte) {
 	}
 
 	// Get time
-	epochTime, err := strconv.ParseInt(metrics["collection_end_time"].(string), 10, 64)
+	epochTimeStr := metrics["collection_end_time"].(string)
+	// TODO: Support for subsecond epochs
+	epochTime, err := strconv.ParseInt(epochTimeStr[:len(epochTimeStr)-3], 10, 64)
 	if err != nil {
 		go CustomLog(methodName+": epoch time conversion failed. "+err.Error(), ErrorSeverity)
 		return
@@ -114,6 +116,7 @@ func loadMapToInfluxDB(con *influxDBClient.Client, dataMap map[string]interface{
 				Tags:        tags,
 				Fields:      fields,
 				Time:        time.Unix(epochTime, 0),
+				Precision:   "s",
 			}
 
 			bps := influxDBClient.BatchPoints{
