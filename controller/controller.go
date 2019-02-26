@@ -8,9 +8,13 @@ import (
 	"github.com/gorilla/mux"
 )
 
+// BasePath is use to search file in gopath directory
 var BasePath = os.Getenv("GOPATH") + "/src/github.com/CiscoSE/nx-telemetry-suite"
 
+// ErrorSeverity a constant use for log purposes
 const ErrorSeverity = "ERROR"
+
+// DebugSeverity a constant use for log purposes
 const DebugSeverity = "DEBUG"
 
 var (
